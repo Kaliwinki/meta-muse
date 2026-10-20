@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta Muse — Espace membres</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Meta Muse</h1>
+    <p class="tagline">Site test avec de vrais comptes utilisateurs</p>
+  </header>
+
+  <main>
+    <!-- Message d'état (erreurs, succès, configuration) -->
+    <div id="message" class="message hidden" role="alert"></div>
+
+    <!-- Zone visiteur : inscription / connexion -->
+    <section id="auth-zone" class="card">
+      <div class="tabs">
+        <button id="tab-login" class="tab active" type="button">Connexion</button>
+        <button id="tab-signup" class="tab" type="button">Inscription</button>
+      </div>
+
+      <form id="login-form" class="form">
+        <h2>Se connecter</h2>
+        <label for="login-email">Adresse e-mail</label>
+        <input id="login-email" type="email" autocomplete="email" required>
+        <label for="login-password">Mot de passe</label>
+        <input id="login-password" type="password" autocomplete="current-password" required>
+        <button type="submit" class="primary">Se connecter</button>
+      </form>
+
+      <form id="signup-form" class="form hidden">
+        <h2>Créer un compte</h2>
+        <label for="signup-email">Adresse e-mail</label>
+        <input id="signup-email" type="email" autocomplete="email" required>
+        <label for="signup-password">Mot de passe (6 caractères minimum)</label>
+        <input id="signup-password" type="password" autocomplete="new-password" minlength="6" required>
+        <button type="submit" class="primary">S'inscrire</button>
+      </form>
+    </section>
+
+    <!-- Zone membre : visible seulement une fois connecté -->
+    <section id="member-zone" class="card hidden">
+      <h2>Bienvenue 👋</h2>
+      <p>Tu es connecté avec l'adresse : <strong id="user-email"></strong></p>
+      <p class="small">Identifiant du compte : <span id="user-uid"></span></p>
+      <button id="logout-btn" class="primary" type="button">Se déconnecter</button>
+    </section>
+  </main>
+
+  <footer>
+    <p class="small">Site hébergé sur GitHub Pages — authentification par Firebase (plan gratuit).</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
